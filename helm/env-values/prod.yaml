@@ -1,0 +1,7 @@
+replicaCount: 3
+config:
+  NODE_ENV: "production"
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 10
