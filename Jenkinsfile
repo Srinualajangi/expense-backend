@@ -74,7 +74,7 @@ pipeline {
             steps {
                 sh """
                     helm upgrade --install backend-dev ./helm \
-                      -n expense-dev \
+                      -n expense-dev --create-namespace \
                       -f helm/env-values/dev.yaml \
                       --set image.repository=${ECR_REPO}/${IMAGE_NAME} \
                       --set image.tag=${IMAGE_TAG}
@@ -92,7 +92,7 @@ pipeline {
             steps {
                 sh """
                     helm upgrade --install backend-staging ./helm \
-                      -n expense-staging \
+                      -n expense-staging --create-namespace \
                       -f helm/env-values/staging.yaml \
                       --set image.repository=${ECR_REPO}/${IMAGE_NAME} \
                       --set image.tag=${IMAGE_TAG}
@@ -110,7 +110,7 @@ pipeline {
             steps {
                 sh """
                     helm upgrade --install backend-prod ./helm \
-                      -n expense-prod \
+                      -n expense-prod --create-namespace \
                       -f helm/env-values/prod.yaml \
                       --set image.repository=${ECR_REPO}/${IMAGE_NAME} \
                       --set image.tag=${IMAGE_TAG}
