@@ -18,8 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
-      - run: npm ci
+      - run: npm install
       - run: npm test || echo "No tests yet"
 
   sast:
@@ -41,9 +40,6 @@ jobs:
     needs: sast
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    permissions:
-      id-token: write
-      contents: read
     steps:
       - uses: actions/checkout@v4
 
