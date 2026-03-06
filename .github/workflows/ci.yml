@@ -6,7 +6,7 @@ on:
 
 env:
   AWS_REGION: ap-south-1
-  IMAGE_NAME: Srinualajangi_expense-backend
+  IMAGE_NAME: expense-backend
 
 jobs:
   test:
