@@ -6,7 +6,7 @@ on:
 
 env:
   AWS_REGION: ap-south-1
-  IMAGE_NAME: expense-backend
+  IMAGE_NAME: Srinualajangi_expense-backend
 
 jobs:
   test:
@@ -31,8 +31,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=expense-backend
-            -Dsonar.organization=srinualajangi
+            -Dsonar.projectKey=Srinualajangi_expense-backend
+            -Dsonar.organization=Srinualajangi
 
   build-push:
     needs: sast
