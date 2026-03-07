@@ -1,3 +1,5 @@
 replicaCount: 2
 config:
   NODE_ENV: "development"
+image:
+  tag: "954991eabbb9b2223685a129a29676bcb7f99a46"

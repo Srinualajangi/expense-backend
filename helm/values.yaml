@@ -1,6 +1,6 @@
 replicaCount: 2
 image:
-  repository: 718307299298.dkr.ecr.ap-south-1.amazonaws.com/expense-backend      # Replace with ECR URL
+  repository: 189023279832.dkr.ecr.ap-south-1.amazonaws.com/expense-backend      # Replace with ECR URL
   tag: "v2"
   pullPolicy: IfNotPresent
 service:

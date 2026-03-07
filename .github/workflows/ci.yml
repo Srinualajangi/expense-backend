@@ -59,3 +59,13 @@ jobs:
         run: |
           docker build -t $ECR_REGISTRY/$IMAGE_NAME:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+
+      - name: Update Helm values for ArgoCD
+        run: |
+          cd helm/env-values
+          sed -i "s|tag:.*|tag: \"${{ github.sha }}\"|" dev.yaml
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Update dev image to ${{ github.sha }}" || true
+          git push
