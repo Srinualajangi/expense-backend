@@ -1,7 +1,11 @@
 replicaCount: 3
 config:
   NODE_ENV: "production"
-autoscaling:
-  enabled: true
-  minReplicas: 3
-  maxReplicas: 10
+  DB_HOST: "mysql-service"
+  DB_PORT: "3306"
+  DB_NAME: "transactions"
+image:
+  tag: "9b6a8c463c4610de10a4a4b14d93a4d4a9e559fb"
+secrets:
+  DB_USERNAME: "root"
+  DB_PASSWORD: "ExpenseApp@1"

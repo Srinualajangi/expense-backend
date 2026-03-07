@@ -1,3 +1,11 @@
 replicaCount: 2
 config:
   NODE_ENV: "staging"
+  DB_HOST: "mysql-service"
+  DB_PORT: "3306"
+  DB_NAME: "transactions"
+image:
+  tag: "9b6a8c463c4610de10a4a4b14d93a4d4a9e559fb"
+secrets:
+  DB_USERNAME: "root"
+  DB_PASSWORD: "ExpenseApp@1"
